@@ -18,6 +18,6 @@ RUN pip3 install django \
 
 RUN git clone "https://github.com/Matisso77/Hackation.git" .
 EXPOSE 5000
-RUN ls
+RUN chmod +x start.sh
 # cloning git repo and starting flask server
-ENTRYPOINT bin/bash ./start.sh
+ENTRYPOINT ./start.sh
