@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'django_school',
         'USER': 'mikus',
         'PASSWORD': '123',
-        'HOST': '127.0.0.1',
+        'HOST': 'trashpanda.pwsz.nysa.pl',
         'PORT': '5432',
     }
 }
