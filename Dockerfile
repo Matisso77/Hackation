@@ -20,4 +20,4 @@ RUN git clone "https://github.com/Matisso77/Hackation.git" .
 EXPOSE 5000
 
 # cloning git repo and starting flask server
-ENTRYPOINT python3 manage.py runserver
+ENTRYPOINT start.sh
