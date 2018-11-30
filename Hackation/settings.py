@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'Hackation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_school',
+        'NAME': 'beertracker',
         'USER': 'mikus',
         'PASSWORD': '123',
         'HOST': 'trashpanda.pwsz.nysa.pl',
