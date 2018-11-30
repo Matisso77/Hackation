@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-git clone https://github.com/Matisso77/Hackation.git .
-ls
+python3 manage.py migrate
+python3 manage.py runserver 0.0.0.0:8000
