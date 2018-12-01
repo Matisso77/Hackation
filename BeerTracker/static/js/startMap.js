@@ -7,11 +7,11 @@ var locations = [
 // GET icon color
 function getIcons(popularity){
   value = Math.floor(popularity / 10) * 10;
-  return "./img/pin"+value+".png";
+  return "../img/pin"+value+".png";
 }
 var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 13,
-  center: {lat: 51.1071467, lng: 17.040798},
+  center: {lat: 51.1071467, lng: 17.040798}
 });
 
   var infowindow = new google.maps.InfoWindow();

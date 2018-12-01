@@ -10,6 +10,7 @@ class Beers(models.Model):
 
 class Bar(models.Model):
     id = models.AutoField(primary_key=True)
+    google_id = models.CharField(max_length=100, default="hasztag")
     Name = models.CharField(max_length=200, default="Bar")
     Link = models.CharField(max_length=600, default="Brak")
     Localization = models.CharField(max_length=50)

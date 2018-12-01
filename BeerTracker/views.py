@@ -14,13 +14,8 @@ def index(request):
     return render(request, 'Index.html')
 
 
-def add(request):
-    try:
-        for item in getData():
-            bar = Bar()
-            bar.Link = item[0]
-            bar.Name = item[1]
+def map(request):
+    local = request.POST.get("LocField")
 
-        return HttpResponse(received_json_data)
-    except Exception as ex:
-        return render(request, HttpResponse('dupa'))
+    return render(request, 'Map.html', {"local": local, })
+
