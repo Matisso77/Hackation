@@ -15,7 +15,7 @@ def index(request):
     return render(request, 'Index.html')
 
 def shit(request):
-    bar = Bar.objects.get.all()
+    bar = Bar.objects.all()
 
     return HttpResponse({"name": 123}, indent=2, separators=(',', ': '),
                         content_type="application/json")
