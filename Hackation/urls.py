@@ -20,5 +20,5 @@ from BeerTracker import urls as beertracker
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(beertracker))
+    path('', include(beertracker)),
 ]

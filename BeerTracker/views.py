@@ -1,3 +1,4 @@
+import requests
 import json
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
@@ -13,6 +14,11 @@ from scraper import getData
 def index(request):
     return render(request, 'Index.html')
 
+def shit(request):
+    bar = Bar.objects.get.all()
+
+    return HttpResponse({"name": 123}, indent=2, separators=(',', ': '),
+                        content_type="application/json")
 
 def map(request):
     local = request.POST.get("LocField")

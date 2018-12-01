@@ -15,6 +15,19 @@ class Bar(models.Model):
     Link = models.CharField(max_length=600, default="Brak")
     Localization = models.CharField(max_length=50)
 
+    def __str__(self):
+        return {"id": self.id,
+                "google_id": self.google_id,
+                "name": self.Name,
+                "Link": self.Link,
+                "Localization": self.Localization}
+
+    def get_dict(self):
+        return {"id": self.id,
+                "google_id": self.google_id,
+                "name": self.Name,
+                "Link": self.Link,
+                "Localization": self.Localization}
 
 class Stock(models.Model):
     Beer = models.ForeignKey(Beers, on_delete=models.CASCADE, related_name="Piwo")
