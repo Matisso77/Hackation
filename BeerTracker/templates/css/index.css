@@ -1,0 +1,32 @@
+#main_content {
+    margin-top: 0%;
+}
+
+#locField {
+    width: 100%;
+    font-size: 30pt;
+    text-align: center;
+    background: -webkit-linear-gradient(#D971C6, #00A9F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+}
+
+#mockLocField {
+    margin: auto;
+    width: 50%;
+    background: linear-gradient(#090E24, #593772);
+    border: 2px inset #593772;
+    border-radius: 15px;
+}
+
+#startButton {
+    width: 10%;
+    font-size: 30pt;
+    margin-top: 30px;
+    text-align: center;
+    color: #090E24;
+    background: #00A9F3;
+    border: 2px outset #593772;
+    border-radius: 15px;
+}
