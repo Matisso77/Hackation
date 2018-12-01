@@ -1,0 +1,60 @@
+.container{
+    width:100%;
+    max-width:100%;
+    margin:0em auto 0em auto;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: 0 0.5em;
+    width: 100%;
+    margin-bottom:0.5em;
+    text-align: center;
+}
+
+[class*='col-'] > a {
+
+}
+
+.row+.row {
+    margin-top: 0.5em;
+}
+
+.col-1-6 {
+    width: 15.8332%;
+    margin-right:1%;
+}
+
+.col-2-6 {
+    width: 32.6667%;
+    margin-right:1%;
+}
+
+.col-3-6 {
+    width: 49.5%;
+    margin-right:1%;
+}
+
+.col-4-6 {
+    width: 66.3333%;
+    margin-right:1%;
+}
+
+.col-5-6 {
+    width: 83.1667%;
+    margin-right:1%;
+}
+
+.col-6-6 {
+    width: 100%;
+}
+
+[class*='col-']:last-of-type {
+    margin-right:0;
+}
