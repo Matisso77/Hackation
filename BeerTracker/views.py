@@ -24,6 +24,8 @@ def shit(request):
                           "bigCost": stocks.bigCost,
                           "smallCost": stocks.smallCost})
         response_json.append({"name": bar.Name,
+                              "localization": bar.Localization,
+                              "google_id": bar.google_id,
                               "stock": stock})
 
     return HttpResponse(json.dumps(response_json, indent=2, separators=(',', ': ')),
