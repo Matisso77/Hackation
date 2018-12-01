@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from .crawler import run
-from .crawler import get_populartimes
-
 import logging
+
+from .crawler import get_populartimes
+from .crawler import run
+
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 """
@@ -54,3 +55,26 @@ def get_id(api_key, place_id):
     :return: see readme
     """
     return get_populartimes(api_key, place_id)
+
+
+"""
+    przyjmuje listę place_id
+    zwraca nam JSON Arraya takiego jak:
+    var locations = [
+    ['NAZWA', lat, lng, popularity]
+  ];
+"""
+
+
+def prepareForMap(idList):
+    key = "AIzaSyDXKsbaRyDV1I-AM75ANdaqo-g_P_vVH6Y"
+    value = []
+    for idx, id in enumerate(idList):
+        temp = get_id(key, id)
+        name = temp["name"]
+        lat = temp["coordinates"]["lat"]
+        lng = temp["coordinates"]["lng"]
+        popularity = temp["current_popularity"]
+#         TODO WAŻNE jak lokal zamknięty to current_popularity wypierdala się :(  i nie ma go w JSON, handlować nullami dziwki! D:
+
+#         TODO create JSON ARRAY from idList results,
