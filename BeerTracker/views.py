@@ -19,7 +19,8 @@ def shit(request):
     for bar in Bar.objects.all():
         stock = []
         for stocks in Stock.objects.all().filter(Bar=bar.id):
-            stock.append({"beer_name": Beers.objects.get(id=stocks.Beer).Name,
+            item = Beers.objects.get(id=stocks.Beer)
+            stock.append({"beer_name": item.Name,
                           "bigCost": stocks.bigCost,
                           "smallCost": stocks.smallCost})
         response_json.append({"name": bar.Name,
