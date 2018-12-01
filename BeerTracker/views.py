@@ -15,11 +15,18 @@ def index(request):
     return render(request, 'Index.html')
 
 def shit(request):
-    bar = Bar.objects.all()
-    response_json = {}
+    response_json = []
+    for bar in Bar.objects.all():
+        stock = []
+        for stocks in Stock.objects.all().filter(Bar=bar.id):
+            stock.append({"beer_name": Beers.objects.get(id=stocks.Beer).Name,
+                          "bigCost": stocks.bigCost,
+                          "smallCost": stocks.smallCost})
+        response_json.append({"name": bar.Name,
+                              "stock": stock})
 
-    return HttpResponse(json.dumps({"name": "123", "asd": "qwe"}, indent=2, separators=(',', ': ')),
-                        content_type="text/json")
+    return HttpResponse(json.dumps(response_json, indent=2, separators=(',', ': ')),
+                        content_type="application/json")
 
 def map(request):
     local = request.POST.get("LocField")
