@@ -17,7 +17,7 @@ def index(request):
 def shit(request):
     bar = Bar.objects.all()
 
-    return HttpResponse(json.dump({"name": 123}), indent=2, separators=(',', ': '),
+    return HttpResponse({"name": 123, "asd": "qwe"}, indent=2, separators=(',', ': '),
                         content_type="application/json")
 
 def map(request):
