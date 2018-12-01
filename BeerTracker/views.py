@@ -17,7 +17,7 @@ def index(request):
 def shit(request):
     bar = Bar.objects.all()
     for item in bar:
-        print(item)
+        print(item["Name"])
     return HttpResponse(json.dumps({"name": 123, "asd": "qwe"}, indent=2, separators=(',', ': ')),
                         content_type="application/json")
 
