@@ -16,10 +16,11 @@ def index(request):
 
 def shit(request):
     bar = Bar.objects.all()
+    response_json = {}
     for item in bar:
-        print(item.Name)
+        beers = Beers.
     return HttpResponse(json.dumps({"name": "123", "asd": "qwe"}, indent=2, separators=(',', ': ')),
-                        content_type="application/json")
+                        content_type="text/json")
 
 def map(request):
     local = request.POST.get("LocField")
