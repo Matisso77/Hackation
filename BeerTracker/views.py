@@ -20,7 +20,7 @@ def shit(request):
         stock = []
         for stocks in Stock.objects.all().filter(Bar=bar.id):
             item = stocks.Beer.Name
-            stock.append({"beer_name": item.Name,
+            stock.append({"beer_name": item,
                           "bigCost": stocks.bigCost,
                           "smallCost": stocks.smallCost})
         response_json.append({"name": bar.Name,
