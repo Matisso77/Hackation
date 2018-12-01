@@ -71,10 +71,17 @@ def prepareForMap(idList):
     value = []
     for idx, id in enumerate(idList):
         temp = get_id(key, id)
-        name = temp["name"]
-        lat = temp["coordinates"]["lat"]
-        lng = temp["coordinates"]["lng"]
-        popularity = temp["current_popularity"]
+        try:
+            name = temp["name"]
+            lat = temp["coordinates"]["lat"]
+            lng = temp["coordinates"]["lng"]
+            popularity = temp["current_popularity"]
+        except:
+            name = ""
+            lat = ""
+            lng = ""
+            popularity = ""
+
 #         TODO WAŻNE jak lokal zamknięty to current_popularity wypierdala się :(  i nie ma go w JSON, handlować nullami dziwki! D:
 
 #         TODO create JSON ARRAY from idList results,
