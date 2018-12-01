@@ -1,60 +1,66 @@
-  //HARDCODED LOCALIZATIONS
+//HARDCODED LOCALIZATIONS
 var locations = [
-  ['4hops','https://www.facebook.com/4hops', 51.107827, 17.036095, 33],
-  ['12 krok','https://www.facebook.com/pubdwunastykrok/', 51.101097, 17.025036, 70]
+['4hops','https://www.facebook.com/4hops', 51.107827, 17.036095, 12],
+['12 krok','https://www.facebook.com/pubdwunastykrok/', 51.101097, 17.025036, 25],
+['Ale bosco','https://www.facebook.com/AleBoscoWroclaw/', 51.112914, 17.035666, 75],
+['Ale browar','https://www.facebook.com/alebrowarwroclaw/', 51.109729, 17.023122, 98],
+['Kontynuacja','https://www.facebook.com/kontynuacja', 51.108446, 17.031682, 50]
 ];
 
 var beers = [
-  ['</br>Piwo1 - Cena zł ', '</br>Piwo2 - Cena zł', '</br>Piwo3 - Cena zł', '</br>Piwo4 - Cena zł'],
-  ['</br>Piwo1 - Cena zł ', '</br>Piwo2 - Cena zł', '</br>Piwo3 - Cena zł', '</br>Piwo4 - Cena zł']
+['</br>Rychtar natur - 11 zł ', '</br>Czarna Manka - 15 zł', '</br>Holiday IPA - 7 zł', '</br>Brauza - 9 zł','</br>Hoppy Meal - 10 zł'],
+['</br>Holiday IPA - 6 zł','</br>Rychtar natur - 11 zł ', '</br>Nyskie Przeniczne - 15 zł', '</br>American Beauty - 7 zł','</br>Ranczo - 9 zł'],
+['</br>Shark - 15 zł ', '</br>ART+ - 9 zł', '</br>Wild Pale Ale - 11 zł', '</br>Siostra Bożenka	 - 16 zł','</br>Freaky APA - 9 zł'],
+['</br>Black Hope - 8 zł ', '</br>Plaza - 12 zł', '</br>Holiday IPA - 6 zł', '</br>Kirek - 6 zł','</br>Pannepot Reserva - 7 zł'],
+['</br>Pšeničny Ležák natur - 13 zł ', '</br>Raj APA - 15 zł', '</br>ART+ - 9 zł', '</br>New Wave Gose - 13 zł','</br>Litovel Premium - 6 zł']
 ];
 
 // GET icon color
 function getIcons(popularity){
-  value = Math.floor(popularity / 10) * 10;
-  return "../static/img/pin"+value+".png";
+value = Math.floor(popularity / 10) * 10;
+return "../static/img/pin"+value+".png";
 }
 var map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 13,
-  center: {lat: 51.1071467, lng: 17.040798}
+zoom: 15,
+center: {lat: 51.1071467, lng: 17.040798}
 });
 
-  var infowindow = new google.maps.InfoWindow();
+var infowindow = new google.maps.InfoWindow();
 
-  var marker, i;
-  // get JSON with parsed ("NAME",Latitude, Longitude, current_popular)
-  for (i = 0; i < locations.length; i++) {
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[i][2], locations[i][3]),
-      icon: getIcons(locations[i][4]),
-      map: map
-    });
+var marker, i;
+// get JSON with parsed ("NAME",Latitude, Longitude, current_popular)
+for (i = 0; i < locations.length; i++) {
+  marker = new google.maps.Marker({
+    position: new google.maps.LatLng(locations[i][2], locations[i][3]),
+    icon: getIcons(locations[i][4]),
+    map: map
+  });
 
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-      return function() {
-        $.ajax({
-          type:"GET",
-          url: "https://url.pl/apiget",
-          complete: function(data) {
-            var beer = beers[i].toString();
-              infowindow.setContent('<div id="content">'+
-                  '<div id="siteNotice">'+
-                  '</div>'+
-                  '<h1 id="firstHeading" class="firstHeading">'+locations[i][0]+'</h1>'+
-                  '<div id="bodyContent">'+
-                  '<p><b>Popularność: '+ locations[i][4]+
-                  '</b></p>'+
-                  '<p>Piwa:'+beer+'</p>'+
-                  '<p>Link do facebooka: <b><a href="'+locations[i][2]+'">Click</a></b>'+
-                  '</div>'+
-                  '</div>');
-              infowindow.open(map, marker);
+  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    return function() {
+      $.ajax({
+        type:"GET",
+        url: "https://url.pl/apiget",
+        complete: function(data) {
+          var beer = beers[i].toString();
+            infowindow.setContent('<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading">'+locations[i][0]+'</h1>'+
+                '<div id="bodyContent">'+
+                '<p><b>Popularność: '+ locations[i][4]+
+                '</b></p>'+
+                '<p>Piwa:'+beer+'</p>'+
+                '<p>Link do facebooka: <b><a href="'+locations[i][1]+'">Click</a></b>'+
+                '</div>'+
+                '</div>');
+            infowindow.open(map, marker);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
           },
-          error: function(jqXHR, textStatus, errorThrown) {
-            },
-          dataType: "jsonp"
-        });
+        dataType: "jsonp"
+      });
 
-      }
-    })(marker, i));
-  }
+    }
+  })(marker, i));
+}
