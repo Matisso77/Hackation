@@ -13,6 +13,8 @@ from scraper import getData
 def index(request):
     return render(request, 'Index.html')
 
+def map(request):
+    return  render(request, 'Map.html')
 
 def add(request):
     try:
@@ -21,6 +23,6 @@ def add(request):
             bar.Link = item[0]
             bar.Name = item[1]
 
-        return HttpResponse(received_json_data)
+        return HttpResponse("elo")
     except Exception as ex:
         return render(request, HttpResponse('dupa'))
