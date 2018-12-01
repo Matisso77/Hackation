@@ -18,4 +18,4 @@ def add(request):
         received_json_data = json.loads(request.body)
         return HttpResponse(received_json_data)
     except Exception as ex:
-        return HttpResponse(ex)
+        return render(request, HttpResponse('dupa'))
