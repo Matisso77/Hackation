@@ -13,8 +13,10 @@ from scraper import getData
 def index(request):
     return render(request, 'Index.html')
 
+
 def map(request):
     return  render(request, 'Map.html')
+
 
 def add(request):
     try:

@@ -1,5 +1,5 @@
 function newDoc() {
-    window.location.pathname = "/web-client/Map.html";
+    window.location.pathname = "/templates/Map.html";
     getLocation();
 }
 
