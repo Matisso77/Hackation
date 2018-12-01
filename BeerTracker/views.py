@@ -15,16 +15,7 @@ def index(request):
 
 
 def map(request):
-    return  render(request, 'Map.html')
+    local = request.POST.get("LocField")
 
+    return render(request, 'Map.html', {"local": local, })
 
-def add(request):
-    try:
-        for item in getData():
-            bar = Bar()
-            bar.Link = item[0]
-            bar.Name = item[1]
-
-        return HttpResponse("elo")
-    except Exception as ex:
-        return render(request, HttpResponse('dupa'))
