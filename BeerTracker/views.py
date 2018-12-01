@@ -7,6 +7,7 @@ from django.views.decorators.csrf import get_token, csrf_exempt, requires_csrf_t
 from django.conf import settings
 from django.shortcuts import redirect
 from .models import *
+from scraper import getData
 
 
 def index(request):

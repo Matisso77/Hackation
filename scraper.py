@@ -3,6 +3,7 @@ from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
 
+
 def simple_get(url):
     try:
         with closing(get(url, stream=True)) as resp:
@@ -120,7 +121,7 @@ def getBeers(url):
     return toDict(dataTab)
 
 
-def getData(url):
+def getData(url='https://ontap.pl/wroclaw/multitapy'):
     raw_html = simple_get(url)
     soup = BeautifulSoup(raw_html, 'html.parser')
 
@@ -128,10 +129,8 @@ def getData(url):
     for p in soup.findAll("div", {"class": "col-lg-3 col-md-4 col-xs-12 col-sm-6"}):
         sitesList.append(p["onclick"][17:-2])
 
+    final = []
     for site in sitesList:
-        print(site)
-        print(site[7:len(site)-9])
-        print(getBeers(site))
+        final.append([site, site[7:len(site)-9], getBeers(site)])
 
-
-getData('https://ontap.pl/wroclaw/multitapy')
+    return final
