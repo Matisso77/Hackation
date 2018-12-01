@@ -18,7 +18,7 @@ def shit(request):
     bar = Bar.objects.all()
     response_json = {}
     for item in bar:
-        beers = Beers.
+
     return HttpResponse(json.dumps({"name": "123", "asd": "qwe"}, indent=2, separators=(',', ': ')),
                         content_type="text/json")
 
