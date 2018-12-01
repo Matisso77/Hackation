@@ -14,6 +14,7 @@ from scraper import getData
 def index(request):
     return render(request, 'Index.html')
 
+
 def shit(request):
     response_json = []
     for bar in Bar.objects.all():
@@ -30,6 +31,7 @@ def shit(request):
 
     return HttpResponse(json.dumps(response_json, indent=2, separators=(',', ': ')),
                         content_type="application/json")
+
 
 def map(request):
     local = request.POST.get("LocField")

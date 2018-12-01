@@ -3,15 +3,20 @@ var locations = [
 ['4hops','https://www.facebook.com/4hops', 51.107827, 17.036095, 12],
 ['12 krok','https://www.facebook.com/pubdwunastykrok/', 51.101097, 17.025036, 25],
 ['Ale bosco','https://www.facebook.com/AleBoscoWroclaw/', 51.112914, 17.035666, 75],
-['Ale browar','https://www.facebook.com/alebrowarwroclaw/', 51.109729, 17.023122, 98],
-['Kontynuacja','https://www.facebook.com/kontynuacja', 51.108446, 17.031682, 50]
+['Ale browar','https://www.facebook.com/alebrowarwroclaw/', 51.109729, 17.023122, 60],
+['Kontynuacja','https://www.facebook.com/kontynuacja', 51.108446, 17.031682, 50],
+['La Famiglia Pizzeria','https://www.facebook.com/LaFamigliaRestauracja/', 51.101368, 17.022805, 57],
+['LAMUS', 'https://www.facebook.com/pub.lamus', 51.099820, 17.030245, 25],
+['Lumberjack', 'https://www.facebook.com/Pub.Lumberjack/', 51.108406, 17.031682, 44],
+['Marynka Piwo', 'https://www.facebook.com/marynkapiwoiaperitivo?fref=ts', 51.107297, 17.030098, 30],
+['Browar stu mostów', 'https://100mostow.pl/', 51.131708, 17.059535, 57]
 ];
 
 var beers = [
-['</br>Rychtar natur - 11 zł ', '</br>Czarna Manka - 15 zł', '</br>Holiday IPA - 7 zł', '</br>Brauza - 9 zł','</br>Hoppy Meal - 10 zł'],
-['</br>Holiday IPA - 6 zł','</br>Rychtar natur - 11 zł ', '</br>Nyskie Przeniczne - 15 zł', '</br>American Beauty - 7 zł','</br>Ranczo - 9 zł'],
+['</br>Rychtar natur - 11 zł ', '</br>Czarna Manka - 15 zł', '</br>Holiday IPA - 7 zł', '</br>Brauza - 13 zł','</br>Hoppy Meal - 12 zł'],
+['</br>Holiday IPA - 6 zł','</br>Rychtar natur - 11 zł ', '</br>Nyskie Przeniczne - 15 zł', '</br>American Beauty - 17 zł','</br>Ranczo - 14 zł'],
 ['</br>Shark - 15 zł ', '</br>ART+ - 9 zł', '</br>Wild Pale Ale - 11 zł', '</br>Siostra Bożenka	 - 16 zł','</br>Freaky APA - 9 zł'],
-['</br>Black Hope - 8 zł ', '</br>Plaza - 12 zł', '</br>Holiday IPA - 6 zł', '</br>Kirek - 6 zł','</br>Pannepot Reserva - 7 zł'],
+['</br>Black Hope - 8 zł ', '</br>Plaza - 12 zł', '</br>Holiday IPA - 11 zł', '</br>Kirek - 11 zł','</br>Pannepot Reserva - 7 zł'],
 ['</br>Pšeničny Ležák natur - 13 zł ', '</br>Raj APA - 15 zł', '</br>ART+ - 9 zł', '</br>New Wave Gose - 13 zł','</br>Litovel Premium - 6 zł']
 ];
 
