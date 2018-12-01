@@ -19,7 +19,7 @@ def shit(request):
     for bar in Bar.objects.all():
         stock = []
         for stocks in Stock.objects.all().filter(Bar=bar.id):
-            item = Beers.objects.get(id=stocks.Beer)
+            item = stocks.Beer.Name
             stock.append({"beer_name": item.Name,
                           "bigCost": stocks.bigCost,
                           "smallCost": stocks.smallCost})
