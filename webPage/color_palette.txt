@@ -1,0 +1,7 @@
+Background 1: #090E24 *
+Background 2: #593772
+
+Accent 1.1: #D971C6
+Accent 1.2: #D63A38
+
+Accent 2: #00A9F3
