@@ -119,6 +119,22 @@ def getBeers(url):
 
     return toDict(dataTab)
 
+def aaa():
+    raw_html = simple_get("https://ontap.pl/wroclaw/multitapy")
+    soup = BeautifulSoup(raw_html, 'html.parser')
+    tab = []
+    for p in soup.findAll("a", {"style": "font-size: 16px; color: orange;"}):
+        tmp=p.text.split()
+
+        tab2=""
+        for i in tmp:
+            tab2=tab2+i+" "
+
+        tab.append(tab2)
+
+
+    return tab
+
 
 def getData(url):
     raw_html = simple_get(url)
@@ -127,11 +143,14 @@ def getData(url):
     sitesList = []
     for p in soup.findAll("div", {"class": "col-lg-3 col-md-4 col-xs-12 col-sm-6"}):
         sitesList.append(p["onclick"][17:-2])
-
+    m=0
+    tab=[]
+    tab=aaa()
     for site in sitesList:
-        print(site)
-        print(site[7:len(site)-9])
-        print(getBeers(site))
 
+        print(site)
+        print(tab[m])
+        print(getBeers(site))
+        m=m+1
 
 getData('https://ontap.pl/wroclaw/multitapy')
