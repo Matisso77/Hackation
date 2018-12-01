@@ -130,6 +130,7 @@ def getData(url):
 
     for site in sitesList:
         print(site)
+        print(site[7:len(site)-9])
         print(getBeers(site))
 
 
