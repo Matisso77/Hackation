@@ -1,3 +1,4 @@
+import requests
 import json
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
@@ -12,6 +13,24 @@ from scraper import getData
 
 def index(request):
     return render(request, 'Index.html')
+
+
+def shit(request):
+    response_json = []
+    for bar in Bar.objects.all():
+        stock = []
+        for stocks in Stock.objects.all().filter(Bar=bar.id):
+            item = stocks.Beer.Name
+            stock.append({"beer_name": item,
+                          "bigCost": stocks.bigCost,
+                          "smallCost": stocks.smallCost})
+        response_json.append({"name": bar.Name,
+                              "localization": bar.Localization,
+                              "google_id": bar.google_id,
+                              "stock": stock})
+
+    return HttpResponse(json.dumps(response_json, indent=2, separators=(',', ': ')),
+                        content_type="application/json")
 
 
 def map(request):

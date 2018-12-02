@@ -80,11 +80,12 @@ def prepareForMap(idList):
 
         except:
             popularity = 0
+
         value.append({"name": name,
                       "lat": lat,
                       "lng": lng,
                       "popularity": popularity})
 
-        return value
+    return value
 #         TODO WAŻNE jak lokal zamknięty to current_popularity wypierdala się :(  i nie ma go w JSON, handlować nullami dziwki! D:
 #         TODO create JSON ARRAY from idList results,
